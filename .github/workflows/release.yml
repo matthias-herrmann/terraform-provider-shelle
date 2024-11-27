@@ -43,7 +43,7 @@ jobs:
         name: goreleaser release
         uses: goreleaser/goreleaser-action@v6
         with:
-          args: release --clean --batch
+          args: release --clean
           version: "~> v2"
         env:
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
