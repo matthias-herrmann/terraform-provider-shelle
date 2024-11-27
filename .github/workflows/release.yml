@@ -43,9 +43,10 @@ jobs:
         name: goreleaser release
         uses: goreleaser/goreleaser-action@v6
         with:
-          args: release --clean
+          args: release --clean --batch
           version: "~> v2"
         env:
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           # GitHub sets this automatically
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
