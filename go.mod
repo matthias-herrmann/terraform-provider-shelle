@@ -1,6 +1,6 @@
 module terraform-provider-hashicups
 
-go 1.17
+go 1.21
 
 require (
 	github.com/hashicorp-demoapp/hashicups-client-go v0.1.0
