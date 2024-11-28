@@ -39,7 +39,9 @@ func (p *shelleProvider) Metadata(_ context.Context, _ provider.MetadataRequest,
 
 // Schema defines the provider-level schema for configuration data.
 func (p *shelleProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
-	resp.Schema = schema.Schema{}
+	resp.Schema = schema.Schema{
+		Attributes: map[string]schema.Attribute{},
+	}
 }
 
 func (p *shelleProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
