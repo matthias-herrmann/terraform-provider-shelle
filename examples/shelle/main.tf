@@ -1,13 +1,17 @@
 terraform {
   required_providers {
-    hashicups = {
-      source = "hashicorp.com/edu/hashicups"
+    shelle = {
+      source = "matthias-herrmann/shelle"
+      version = "0.2.2"
     }
   }
 }
 
-provider "hashicups" {
+provider "shelle" {
+  # Configuration options
 }
+
+
 
 data "hashicups_shelle" "edu" {
   command_text = "ping -t 10 google.de"
