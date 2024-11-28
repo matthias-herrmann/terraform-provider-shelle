@@ -1,4 +1,4 @@
-module terraform-provider-hashicups
+module terraform-provider-shelle
 
 go 1.21
 
