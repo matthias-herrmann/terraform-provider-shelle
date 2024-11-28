@@ -2,14 +2,14 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/matthias-herrmann/shelle" {
-  version     = "0.2.6"
-  constraints = "~> 0.2.6"
+  version     = "0.2.7"
+  constraints = "~> 0.2.7"
   hashes = [
-    "h1:TugTwOc44Q1XFlruOGreEgJtDJQ85Wx+XNUminU/BZo=",
-    "zh:169fca602ba7fa9d93f39515223e4d446ad879ea7a874df908c8ab5a04345a29",
-    "zh:37f3b134b09be3b9d77612e569683f87c77a3dc97f05fd8d9915418341a7ec46",
+    "h1:Oiz7mfW0w856C/m//dCPu+6YFXdV2xbW4RLU9kIcWp4=",
+    "zh:0ed1368f7facf08605dfecfb0c82dbccc8ce13bca60bd62070a38d2d42a8be3b",
+    "zh:498330bc12a1942cfd6f560e61bf29961f5e2dca51b49de99d18e9db589ff74c",
+    "zh:52f574fcf334f2eb4c0f5592f8473b26d07c9e5719b2180d51473bf8a6dce2c2",
     "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
-    "zh:afe31f87d99ae2aaa25660faf9bd4f5477f89c91a1ac6b648a87ebdd5b310cad",
-    "zh:d7879e0475f35c4b930db03c1a77375aa29c5dbb64f8ceae6e6e27a7017d434c",
+    "zh:a53984176ceae45580fcceb50aea65b2be0d2f95483f46ca70c022aaa4f22f8a",
   ]
 }
