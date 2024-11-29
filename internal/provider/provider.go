@@ -18,6 +18,7 @@ var (
 // New is a helper function to simplify provider server and testing implementation.
 func New(version string) func() provider.Provider {
 	return func() provider.Provider {
+		tflog.Warn(context.Background(), "Hello from provider New")
 		return &shelleProvider{
 			version: version,
 		}
