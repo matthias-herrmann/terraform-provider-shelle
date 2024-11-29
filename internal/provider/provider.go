@@ -7,6 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
+	"github.com/hashicorp/terraform-plugin-log/tflog"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -32,29 +33,34 @@ type shelleProvider struct {
 }
 
 // Metadata returns the provider type name.
-func (p *shelleProvider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
+func (p *shelleProvider) Metadata(ctx context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
+	tflog.Warn(ctx, "Hello from provider Metadata")
 	resp.TypeName = "shelle"
 	resp.Version = p.version
 }
 
 // Schema defines the provider-level schema for configuration data.
-func (p *shelleProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
+func (p *shelleProvider) Schema(ctx context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
+	tflog.Warn(ctx, "Hello from provider Schema")
 	resp.Schema = schema.Schema{
 		Attributes: map[string]schema.Attribute{},
 	}
 }
 
 func (p *shelleProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
+	tflog.Warn(ctx, "Hello from provider configure")
 }
 
 // DataSources defines the data sources implemented in the provider.
-func (p *shelleProvider) DataSources(_ context.Context) []func() datasource.DataSource {
+func (p *shelleProvider) DataSources(c context.Context) []func() datasource.DataSource {
+	tflog.Warn(c, "Hello from provider DataSources")
 	return []func() datasource.DataSource{
 		NewShelleDataSource,
 	}
 }
 
 // Resources defines the resources implemented in the provider.
-func (p *shelleProvider) Resources(_ context.Context) []func() resource.Resource {
+func (p *shelleProvider) Resources(c context.Context) []func() resource.Resource {
+	tflog.Error(c, "Hello from provider Resources")
 	return []func() resource.Resource{}
 }

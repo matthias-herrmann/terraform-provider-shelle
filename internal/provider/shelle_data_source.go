@@ -7,6 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
+	"github.com/hashicorp/terraform-plugin-log/tflog"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -30,7 +31,7 @@ type shelleDataSourceModel struct {
 }
 
 // Metadata returns the data source type name.
-func (d *shelleDataSource) Metadata(_ context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
+func (d *shelleDataSource) Metadata(ctx context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
 	resp.TypeName = req.ProviderTypeName + "_shelle"
 }
 
@@ -50,6 +51,7 @@ func (d *shelleDataSource) Schema(_ context.Context, _ datasource.SchemaRequest,
 
 // Read refreshes the Terraform state with the latest data.
 func (d *shelleDataSource) Read(ctx context.Context, req datasource.ReadRequest, resp *datasource.ReadResponse) {
+	tflog.Warn(ctx, "Datasource read matthiash")
 	var state shelleDataSourceModel
 
 	// Get the command_text attribute from the request
